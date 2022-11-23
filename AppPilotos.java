@@ -66,7 +66,7 @@ public class AppPilotos {
                 
                 for(int i = 0; i < qtdCadastrados; i++){
 
-                    pilotos[i];
+                    System.out.println(pilotos[i].getNome());
                 
                 }
                 
