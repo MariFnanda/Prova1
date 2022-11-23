@@ -75,6 +75,20 @@ public class AppPilotos {
 
                 voltarMenu(in);
             } else if (opcao == 3) {
+                String c;
+
+                System.out.println("\nDigite o CPF: ");
+                c = in.nextLine();
+
+                for (int i = 0; i < qtdCadastrados; i++){
+                    if(c.equals(pilotos[i].getCpf())){
+                        System.out.println("\nPiloto: " + pilotos[i].getNome());
+                    } else{
+                        System.out.println("\nPiloto não encontrado, tente novamente.");
+                    }
+                }
+
+                voltarMenu(in);
 
             } else if (opcao == 4) {
                 
