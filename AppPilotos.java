@@ -36,8 +36,9 @@ public class AppPilotos {
                     voltarMenu(in);
                     continue;
                 }
-
+                    else{
                     System.out.println("\nDigite o nome do piloto: ");
+                    pilotos[qtdCadastrados] = piloto;
                     piloto.setNome(in.nextLine());
                     System.out.println("\nE o cpf: ");
                     piloto.setCpf(in.nextLine());
@@ -45,10 +46,10 @@ public class AppPilotos {
                     piloto.setBreve(in.nextLine());
                     System.out.println("\nNúmero da matricula: ");
                     piloto.setMatricula(in.nextInt());
-                    in.nextLine();
-                    
+                    in.nextLine();        
                     qtdCadastrados++;
-
+                    
+                }
                 //Cadastre seu piloto aqui
 
                 System.out.println("\nPiloto cadastrado com sucesso.");
@@ -61,8 +62,13 @@ public class AppPilotos {
                     voltarMenu(in);
                     continue;
                 }
-                for(int c = 0; c <= MAX_ELEMENTOS; c++){
-                    System.out.println(pilotos[MAX_ELEMENTOS]);
+                
+                for(int i = 0; i < qtdCadastrados; i++){
+                    /*System.out.println(pilotos[qtdCadastrados]);*/
+                    System.out.printf("Nome: %s \n", piloto.getNome());
+                    System.out.printf("Cpf: %s \n", piloto.getCpf());
+                    System.out.printf("Breve: %s \n", piloto.getBreve());
+                    System.out.printf("Matricula: %d \n", piloto.getMatricula());
                 }
                 
 
