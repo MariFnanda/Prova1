@@ -3,20 +3,19 @@ package aplicativos;
 
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.Vector;
 
 import aplicativos.Registro.Pessoa;
 import aplicativos.Registro.Piloto;
 
 public class AppPilotos {
+
     public static void main(String[] args) throws InterruptedException, IOException {
-        final int MAX_ELEMENTOS = 2;
+        final int MAX_ELEMENTOS = 20;
         int opcao, qtdCadastrados = 0;
         Pessoa[] pilotos = new Pessoa[MAX_ELEMENTOS];
         Scanner in = new Scanner(System.in);
-        Piloto piloto = new Piloto();
+        /*Piloto piloto = new Piloto();*/
         
-
         do {
             System.out.println("\n****\nMENU\n****\n");
             System.out.println("1 - Cadastrar piloto");
@@ -37,8 +36,9 @@ public class AppPilotos {
                     continue;
                 }
                     else{
+                   
+                    Piloto piloto = new Piloto();
                     System.out.println("\nDigite o nome do piloto: ");
-                    pilotos[qtdCadastrados] = piloto;
                     piloto.setNome(in.nextLine());
                     System.out.println("\nE o cpf: ");
                     piloto.setCpf(in.nextLine());
@@ -46,8 +46,9 @@ public class AppPilotos {
                     piloto.setBreve(in.nextLine());
                     System.out.println("\nNúmero da matricula: ");
                     piloto.setMatricula(in.nextInt());
-                    in.nextLine();        
-                    qtdCadastrados++;
+                    in.nextLine();    
+                    pilotos[qtdCadastrados] = piloto;
+                    qtdCadastrados++;  
                     
                 }
                 //Cadastre seu piloto aqui
@@ -64,11 +65,9 @@ public class AppPilotos {
                 }
                 
                 for(int i = 0; i < qtdCadastrados; i++){
-                    /*System.out.println(pilotos[qtdCadastrados]);*/
-                    System.out.printf("Nome: %s \n", piloto.getNome());
-                    System.out.printf("Cpf: %s \n", piloto.getCpf());
-                    System.out.printf("Breve: %s \n", piloto.getBreve());
-                    System.out.printf("Matricula: %d \n", piloto.getMatricula());
+
+                    pilotos[i];
+                
                 }
                 
 
@@ -88,18 +87,6 @@ public class AppPilotos {
         System.out.println("Fim do programa!");
 
         in.close();
-    }
-
-    private static void setMatricula(int nextInt) {
-    }
-
-    private static void setBreve(String nextLine) {
-    }
-
-    private static void setCpf(String nextLine) {
-    }
-
-    private static void setNome(String nextLine) {
     }
 
     private static void voltarMenu(Scanner in) throws InterruptedException, IOException {
