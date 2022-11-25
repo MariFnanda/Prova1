@@ -14,7 +14,6 @@ public class AppPilotos {
         int opcao, qtdCadastrados = 0;
         Pessoa[] pilotos = new Pessoa[MAX_ELEMENTOS];
         Scanner in = new Scanner(System.in);
-        /*Piloto piloto = new Piloto();*/
         
         do {
             System.out.println("\n****\nMENU\n****\n");
@@ -50,8 +49,8 @@ public class AppPilotos {
                     pilotos[qtdCadastrados] = piloto;
                     qtdCadastrados++;  
                     
-                }
                 //Cadastre seu piloto aqui
+                }
 
                 System.out.println("\nPiloto cadastrado com sucesso.");
                 voltarMenu(in);
@@ -63,15 +62,15 @@ public class AppPilotos {
                     voltarMenu(in);
                     continue;
                 }
-                
+                // Exiba os pilotos aqui
                 for(int i = 0; i < qtdCadastrados; i++){
 
+                    System.out.println("\nPiloto:");
                     System.out.println(pilotos[i].getNome());
                 
                 }
                 
 
-                // Exiba os pilotos aqui
 
                 voltarMenu(in);
             } else if (opcao == 3) {
@@ -82,8 +81,10 @@ public class AppPilotos {
 
                 for (int i = 0; i < qtdCadastrados; i++){
                     if(c.equals(pilotos[i].getCpf())){
+                        System.out.println("\nO Cpf pertence à:");
                         System.out.println("\nPiloto: " + pilotos[i].getNome());
-                    } else{
+                    } 
+                    if(c.equals(pilotos[i].getCpf()) == false){
                         System.out.println("\nPiloto não encontrado, tente novamente.");
                     }
                 }
@@ -98,7 +99,7 @@ public class AppPilotos {
             }
         } while (opcao != 0);
 
-        System.out.println("Fim do programa!");
+        System.out.println("\nFim do programa!");
 
         in.close();
     }
