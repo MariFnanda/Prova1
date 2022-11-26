@@ -11,8 +11,12 @@ public class Pessoa {
         return nome;
     }
     public String setNome(String nome) {
+        if(!nome.matches("[A-Z]")){
+            throw new NullPointerException("\nO nome é inválido, tente novamente!");
+        }
         this.nome = nome;
         return nome;
+        
     }
     public String getCpf() {
         return cpf;
